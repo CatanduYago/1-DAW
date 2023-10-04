@@ -2,7 +2,7 @@ package Ejercicios1Tema2;
 
 import java.util.Scanner;
 
-public class App {
+public class App {  
     public static void multiplo(){
         Scanner sc = new Scanner(System.in); 
         int num = sc.nextInt();
@@ -249,9 +249,9 @@ int año = sc.nextInt();
         opcion = 0;
         boolean salir = false;
     
-
         while(!salir){
-        System.out.println("\n1. Ejercicio 1 "+"\n2. Ejercicio 2 "+ "\n3. Ejercicio 3 "+"\n4. Ejercicio 4 "+"\n5. Ejercicio 5 "+"\n6. Ejercicio 6 "+"\n7. Ejercicio 7 "+"\n8. Ejercicio 8 "+"\n9. Ejercicio 9 "+"\n10. Ejercicio 10 "+"\n11. Salir.\n\n");
+            System.out.println("\n1. Ejercicio 1 "+"\n2. Ejercicio 2 "+ "\n3. Ejercicio 3 "+"\n4. Ejercicio 4 "+"\n5. Ejercicio 5 "+"\n6. Ejercicio 6 "+"\n7. Ejercicio 7 "+"\n8. Ejercicio 8 "+"\n9. Ejercicio 9 "+"\n10. Ejercicio 10 "+"\n11. Salir.\n\n");
+        
         
     
         try {System.out.print("Ingrese una opcion: \n");
@@ -301,16 +301,22 @@ int año = sc.nextInt();
             case 11:
                 break;
             default:
-            System.out.println("Opcion incorrecta, solo numeros entre 1 y 10");
-            break;
+                System.out.println("Opcion incorrecta, solo numeros entre 1 y 10");
+                salir = false;
+                break;
         }
-        boolean salir = true;
+       break;
+       
+       }
+       
+       catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
 
-        } catch (Exception e) {
-            System.out.println(e);
+        } while ( salir = false); 
+
+
+            }
+        }
+
     }
-}
-
-}
-}
 
