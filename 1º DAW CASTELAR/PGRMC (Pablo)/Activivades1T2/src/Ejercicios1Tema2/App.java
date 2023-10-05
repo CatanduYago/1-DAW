@@ -130,7 +130,7 @@ int horasTrabajadas = sc.nextInt();
             sueldo = 150 * tarifaNormal + (horasTrabajadas - 150) * tarifaExtra;
         }
         
-        System.out.println("El sueldo total es: " + sueldo + "€");
+        System.out.println("El sueldo total es: " + sueldo + " euros");
         sc.close();    
 
 }
