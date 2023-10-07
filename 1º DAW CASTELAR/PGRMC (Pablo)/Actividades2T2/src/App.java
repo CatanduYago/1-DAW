@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class App {  
+public class App{  
     public static void cuadrado(){
         Scanner sc = new Scanner(System.in); 
         System.out.println("Ingrese un numero: ");
@@ -15,7 +15,7 @@ public class App {
     sc.close();
 }
 
-public static void media() {
+public static void media(){
 Scanner sc = new Scanner(System.in);
 System.out.println("Ingrese un numero: ");
 int num = sc.nextInt();
@@ -28,7 +28,7 @@ while(num>=0)
 sc.close();
 }
 
-public static void numeros() {
+public static void numeros(){
     int num = 100;   
     while (num >= 0) {
         System.out.println(num);       
@@ -36,7 +36,7 @@ public static void numeros() {
     }
 }
 
-public static void producto() { 
+public static void producto(){ 
     int num = 1;
     while (num <= 19) {
         System.out.println(num);
@@ -44,22 +44,30 @@ public static void producto() {
     }
 }
 
-public static void medias2() { 
+public static void medias2(){
     Scanner sc = new Scanner(System.in);
-    System.out.println("Ingrese un numero: ");
-    int num = sc.nextInt();
-    while(num>=0)
-    {
-        if(num>0)
-        {
-            System.out.println("La media de los positivos es: "+(num/2));
+        
+    double sumaPositivos = 0;
+    double sumaNegativos = 0;
+    int contadorCeros = 0;
+    
+    for (int i = 0; i < 10; i++){
+        System.out.print("Ingrese un número: ");
+        double numero = sc.nextDouble();  
+        if (numero > 0){
+            sumaPositivos += numero;
         }
-        else if(num<0)
-        {
-            System.out.println("La media de los negativos es: "+(-num/2));
+        else if (numero < 0){
+            sumaNegativos += numero;
         }
-        System.out.println("Ingrese un numero: ");
-        num = sc.nextInt();
+        else{
+            contadorCeros++;
+        }
+        double mediaPositivos = sumaPositivos / (10 - contadorCeros);
+        double mediaNegativos = sumaNegativos / (10 - contadorCeros);
+        System.out.println("Media de los números positivos: " + mediaPositivos);
+        System.out.println("Media de los números negativos: " + mediaNegativos);
+        System.out.println("Cantidad de ceros: " + contadorCeros);
     }
     sc.close();
 }
@@ -114,30 +122,54 @@ public static void adivinar(){
 }
 
 public static void primos(){ 
-    Scanner scanner = new Scanner(System.in);
-    System.out.print("Ingresa un número: ");
-    int numero = scanner.nextInt();
-    scanner.close();
-    
-    if (numero <= 1) {
-        System.out.println(numero + " no es un número primo.");
+    Scanner sc = new Scanner(System.in);       
+    System.out.print("Ingrese un número para comprobar si es primo: ");
+    int n = sc.nextInt(); 
+    if (esPrimo(n)) {
+        System.out.println(n + " es un número primo.");
     } else {
-        boolean esPrimo = true;
-        for (int i = 2; i <= Math.sqrt(numero); i++) {
-            if (numero % i == 0) {
-                esPrimo = false;
-                break;
-            }
-        }
-        
-        String resultado = esPrimo ? " es un número primo." : " no es un número primo.";
-        System.out.println(numero + resultado);
+        System.out.println(n + " no es un número primo.");
     }
+    sc.close();
 }
+
+public static boolean esPrimo(int numero){
+    if (numero <= 1) {
+        return false; 
+    }
+    for (int i = 2; i <= Math.sqrt(numero); i++){
+        if (numero % i == 0) {
+            return false;
+        }
+    }
+    return true; 
+}
+
 
 public static void caja(){ 
+            Scanner sc = new Scanner(System.in);
+            final int COMBINACION_CORRECTA = 1234;
+            int intentos = 4;
+            while (intentos > 0){
+                System.out.print("Introduzca la combinación de la caja fuerte (4 cifras): ");
+                int intento = sc.nextInt();
+                
+                if (intento == COMBINACION_CORRECTA){
+                    System.out.println("Has abierto la caja fuerte.");
+                    break;
+                } else{
+                    intentos--;
+                    if (intentos > 0) {
+                        System.out.println("Clave incorrecta. Te quedan " + intentos + " intentos.");
+                    } else{
+                        System.out.println("Lo siento, has agotado las 4 oportunidades.");
+                    }
+                }
+            }
+            
+            sc.close();
+        }
 
-}
 public static void main(String[] args){
 
 
@@ -152,7 +184,7 @@ public static void main(String[] args){
     try {System.out.print("Ingrese una opcion: \n");
         opcion = sc.nextInt();
 
-    switch (opcion) {
+    switch (opcion){
         case 1:
             System.out.println();
             cuadrado();        
@@ -186,7 +218,7 @@ public static void main(String[] args){
             adivinar();
             break;
         case 9: 
-            System.out.println("");                  
+            System.out.println();                  
             primos();
             break;
         case 10: 
@@ -201,7 +233,7 @@ public static void main(String[] args){
             break;
 }
 break;
-    } catch (Exception e) {
+    } catch (Exception e){
         System.out.println("Error: " + e.getMessage());
 
     } while ( salir = false); 
