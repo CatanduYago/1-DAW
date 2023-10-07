@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class App{  
+public class App {  
     public static void cuadrado(){
         Scanner sc = new Scanner(System.in); 
         System.out.println("Ingrese un numero: ");
