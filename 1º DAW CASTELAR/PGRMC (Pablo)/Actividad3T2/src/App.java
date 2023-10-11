@@ -7,12 +7,12 @@ public class App {
         int segundos = 0;
         int minutos = 0;
         int horas = 0;
-        while (true) {
+        while (true){
             System.out.printf("%02d:%02d:%02d%n", horas, minutos, segundos);
         
             try {
                 Thread.sleep(1000); 
-            } catch (InterruptedException e) {
+            } catch (InterruptedException e){
                 e.printStackTrace();
             }
 
@@ -45,7 +45,7 @@ public class App {
         }
 
         int potencia = 1;
-        for (int i = 0; i < exponente; i++) {
+        for (int i = 0; i < exponente; i++){
             potencia *= base;
         }
         System.out.println("La potencia es: " + potencia);
@@ -57,7 +57,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese una frase: ");
         String frase = sc.nextLine();
-        for (int i = 0; i < frase.length(); i++) {
+        for (int i = 0; i < frase.length(); i++){
             System.out.println(frase.charAt(i));
         }
         sc.close();
@@ -82,7 +82,7 @@ public class App {
             System.out.println("El limite inferior y el superior son iguales");
             salir = true;
         }
-        while (!salir) {
+        while (!salir){
             System.out.println("Ingrese un numero: ");
             int numero = sc.nextInt();
             if (numero == 0){
@@ -101,30 +101,36 @@ public class App {
         sc.close();
 }
 
-    public static void adivinar(){ //Adivinar un numero del 0 al 100 en maximo 10 intentos y contar los intentos en ls que se adivinA
+    public static void adivinar(){ 
         Scanner sc = new Scanner(System.in);
-        Random rand = new Random();
-        System.out.println("Ingresa un numero entre 0 y 100: ");
-        int numero = sc.nextInt();
-        int intentos = 10;
-        int numeroAdivinado = rand.nextInt(100)+1;
-        boolean salir = false;
-        while (!salir) {
-            System.out.println("Sigue intentadolo. Te quedan " + intentos+ " intentos");
-            numero = sc.nextInt();
-            while(numero!=numeroAdivinado){
-                if(numero>numeroAdivinado){ {
-                    System.out.println("Te has pasadoo");
-                }}
-                else if(numero<numeroAdivinado){
-                    System.out.println("Ni de coña loco, tirale para arriba");
-                }
-                System.out.println("Ingrese un número: ");
-                numeroAdivinado = sc.nextInt();
+        Random random = new Random();
+        int Adivinar = random.nextInt(100) + 1;
+        int intentos = 0;
+        int limiteIntentos = 10;
+        boolean adivinado = false;
+
+        System.out.println("\nIntenta adivinar un número del 1 al 100. Tienes 10 intentos. \n");
+
+        while (intentos < limiteIntentos) {
+            System.out.print("Introduce un número: ");
+            int numeroUsuario = sc.nextInt();
+            intentos++;
+
+            if (numeroUsuario == Adivinar) {
+                adivinado = true;
+                System.out.println("OLEEE! Has adivinado el número en " + intentos + " intentos.");
+                break;
+            } else if (numeroUsuario < Adivinar) {
+                System.out.println("El número es mayor.\nIntentos restantes: " + (limiteIntentos - intentos +"\n"));
+            } else {
+                System.out.println("El número es menor.\nIntentos restantes: " + (limiteIntentos - intentos)+"\n");
             }
-            intentos--;
         }
-        System.out.println("Has adivinado el numero: " + numeroAdivinado);
+
+        if (!adivinado){
+            System.out.println("Se han agotado los intentos. El número era: " + Adivinar);
+    }
+    sc.close();
 }
 
 
@@ -137,7 +143,7 @@ public class App {
         boolean salir = false;
     
         while(!salir){
-            System.out.println("\n1. Cronómetro "+"\n2. Potencia de dos números "+ "\n3. Deletrear "+"\n4. Intervalos    "+"\n5. Ejercicio 5 ");
+            System.out.println("\n1. Cronómetro "+"\n2. Potencia de dos números "+ "\n3. Deletrear "+"\n4. Intervalos    "+"\n5. Adivina un numero entre el 1 y el 100 ");
         
         
     
