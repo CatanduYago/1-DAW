@@ -167,7 +167,7 @@ public class App {
                 adivinar();
                 break;
             default:
-                System.out.println("Opcion incorrecta, solo numeros entre 1 y 10");
+                System.out.println("Opcion incorrecta, solo numeros entre 1 y 5");
                 salir = false;
                 break;
         }
