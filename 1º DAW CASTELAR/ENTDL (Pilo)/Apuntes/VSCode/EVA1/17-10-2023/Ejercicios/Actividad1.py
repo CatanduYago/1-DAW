@@ -18,7 +18,7 @@ def calcularsueldoneto(tipo_empleado, trienios, sesenios, familia_numerosa):
     elif sesenios == 3:
         sueldoneto += 125
 
-    if familianumerosa == "SÍ":
+    if familianumerosa == "SÍ"or "SI":
         retencionirpf -= 1
         sueldoneto = salariobase - (retencionirpf / 100) * salariobase
 
