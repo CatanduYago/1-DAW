@@ -56,20 +56,64 @@ public class App {
         return resultado.toString();
     }
 
-    public static void Areaperimetro(double radio) {
-        double area = Math.PI * radio * radio;
-        double perimetro = 2 * Math.PI * radio;
-        System.out.println("El área de la circunferencia es: " + area);
-        System.out.println("El perímetro de la circunferencia es: " + perimetro);
+    public static double calcularArea(double radio) {
+        return Math.PI * Math.pow(radio, 2);
     }
 
-    public static void area() {
+    public static double calcularPerimetro(double radio) {
+        return 2 * Math.PI * radio;
+    }
+
+    public static void areayperimetro() {
         Scanner scanner = new Scanner(System.in);
+
         System.out.print("Ingresa el radio de la circunferencia: ");
         double radio = scanner.nextDouble();
-        Areaperimetro(radio );
-           
-        
+
+        double area = calcularArea(radio);
+        double perimetro = calcularPerimetro(radio);
+
+        System.out.println("El área de la circunferencia es: " + Math.round(area));
+        System.out.println("El perímetro de la circunferencia es: " + Math.round(perimetro));
+    }
+
+    public class Loginasd {
+
+        static int intentos = 0;
+
+        public static boolean Login(String usuario, String contrasena) {
+            if (usuario.equals("usuario1") && contrasena.equals("asdasd")) {
+                return true;
+            } else {
+                intentos++;
+                return false;
+            }
+        }
+
+        public static void loginAp() {
+            Scanner scanner = new Scanner(System.in);
+
+            for (int i = 0; i < 3; i++) {
+                System.out.print("Nombre de usuario: ");
+                String usuario = scanner.nextLine();
+                System.out.print("Contraseña: ");
+                String contrasena = scanner.nextLine();
+
+                if (Login(usuario, contrasena)) {
+                    System.out.println("Inicio de sesión correcto");
+                    break;
+                } else {
+                    System.out.println(
+                            "Nombre de usuario o contraseña incorrectos. Intentos restantes: " + (3 - intentos));
+                }
+            }
+
+            if (intentos == 3) {
+                System.out.println("Se han agotado los intentos. Se ha cerrado sesión");
+            }
+        }
+    
+
     public static void main(String[] args) throws Exception {
 
         int opcion;
@@ -80,7 +124,8 @@ public class App {
 
             while (!salir) {
                 System.out.println("\n1. ¿Es multiplo? " + "\n2. Media de temperaturas " + "\n3. Espaciado "
-                        + "\n4. Area y Perimetro de una circunferencia" + "\n5. Adivina un numero entre el 1 y el 100 ");
+                        + "\n4. Area y Perimetro de una circunferencia"
+                        + "\n5. Login " + "\n6. Salir " + "\n7. Salir" + "\n8. Salir");
 
                 try {
                     System.out.print("Ingrese una opcion: \n");
@@ -97,10 +142,10 @@ public class App {
                             espaciado();
                             break;
                         case 4:
-                            Areaperimetro();
+                            areayperimetro();
                             break;
                         case 5:
-
+                            loginAp();
                             break;
                         case 6:
 
@@ -123,12 +168,8 @@ public class App {
                 }
                 while (salir = false)
                     ;
-
-
-
-
-
-
-
-
-                    
+            }
+        }
+    }
+}
+}
