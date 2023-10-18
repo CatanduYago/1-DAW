@@ -77,11 +77,10 @@ public class App {
         System.out.println("El perímetro de la circunferencia es: " + Math.round(perimetro));
     }
 
-    public class Loginasd {
-
-        static int intentos = 0;
+    static int intentos = 0;
 
         public static boolean Login(String usuario, String contrasena) {
+        
             if (usuario.equals("usuario1") && contrasena.equals("asdasd")) {
                 return true;
             } else {
@@ -112,7 +111,42 @@ public class App {
                 System.out.println("Se han agotado los intentos. Se ha cerrado sesión");
             }
         }
-    
+
+        public class CalculoMCD {
+
+            public static int calcularMCD(int num1, int num2) {
+                while (num2 != 0) {
+                    int temp = num2;
+                    num2 = num1 % num2;
+                    num1 = temp;
+                }
+                return num1;
+            }
+        
+            public static void mcd() {
+                try {
+                    
+                    Scanner sc = new Scanner(System.in);
+        
+                    System.out.print("Ingresa un número entero: ");
+                    int numero1 = sc.nextInt();
+                    System.out.print("Ingrese otro número entero: ");
+                    int numero2 = sc.nextInt();
+                    
+                    if (numero1 < 0 || numero2 < 0) {
+                        System.out.println("Los números deben ser enteros");
+                    } else {
+                        int mcd = calcularMCD(numero1, numero2);
+                        System.out.println("El MCD de " + numero1 + " y " + numero2 + " es: " + mcd);
+                    }
+                    
+                    sc.close();
+                } catch (java.util.InputMismatchException e) {
+                    System.out.println("Debes ingresar números enteros válidos");
+                }
+            }
+        }
+        
 
     public static void main(String[] args) throws Exception {
 
@@ -125,7 +159,7 @@ public class App {
             while (!salir) {
                 System.out.println("\n1. ¿Es multiplo? " + "\n2. Media de temperaturas " + "\n3. Espaciado "
                         + "\n4. Area y Perimetro de una circunferencia"
-                        + "\n5. Login " + "\n6. Salir " + "\n7. Salir" + "\n8. Salir");
+                        + "\n5. Login " + "\n6. MCD de dós números " + "\n7. Salir" + "\n8. Salir");
 
                 try {
                     System.out.print("Ingrese una opcion: \n");
@@ -148,7 +182,7 @@ public class App {
                             loginAp();
                             break;
                         case 6:
-
+                            mcd();
                             break;
                         case 7:
 
@@ -169,7 +203,7 @@ public class App {
                 while (salir = false)
                     ;
             }
-        }
-    }
-}
+     
+
+   } }
 }
