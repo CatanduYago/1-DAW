@@ -112,8 +112,6 @@ public class App {
             }
         }
 
-        public class CalculoMCD {
-
             public static int calcularMCD(int num1, int num2) {
                 while (num2 != 0) {
                     int temp = num2;
@@ -145,7 +143,57 @@ public class App {
                     System.out.println("Debes ingresar números enteros válidos");
                 }
             }
-        }
+        
+
+            public static void tiempo() {
+                Scanner scanner = new Scanner(System.in);
+                
+                while (true) {
+                    System.out.println("Elija una opción:");
+                    System.out.println("1. Convertir a segundos");
+                    System.out.println("2. Convertir a horas, minutos y segundos");
+                    System.out.println("3. Salir del programa");
+                    
+                    int opcion = scanner.nextInt();
+                    
+                    switch (opcion) {
+                        case 1:
+                            System.out.println("Introduzca las horas, minutos y segundos:");
+                            int horas = scanner.nextInt();
+                            int minutos = scanner.nextInt();
+                            int segundos = scanner.nextInt();
+                            int totalSegundos = tiempoASegundos(horas, minutos, segundos);
+                            System.out.println("El tiempo en segundos es: " + totalSegundos + " segundos");
+                            break;
+                        case 2:
+                            System.out.println("Cantidad de segundos:");
+                            int tiempoEnSegundos = scanner.nextInt();
+                            int[] resultado = segundosATiempo(tiempoEnSegundos);
+                            System.out.println("El tiempo es: " + resultado[0] + " horas, " + resultado[1] + " minutos y " + resultado[2] + " segundos");
+                            break;
+                        case 3:
+                            System.out.println("Saliendo del programa");
+                            scanner.close();
+                            System.exit(0);
+                            break;
+                        default:
+                            System.out.println("Opción no válida. Por favor, elija una opción válida");
+                    }
+                }
+            }
+            
+            public static int tiempoASegundos(int horas, int minutos, int segundos) {
+                return horas * 3600 + minutos * 60 + segundos;
+            }
+            
+            public static int[] segundosATiempo(int totalSegundos) {
+                int horas = totalSegundos / 3600;
+                int minutos = (totalSegundos % 3600) / 60;
+                int segundos = totalSegundos % 60;
+                int[] resultado = {horas, minutos, segundos};
+                return resultado;
+            }
+        
         
 
     public static void main(String[] args) throws Exception {
@@ -159,7 +207,7 @@ public class App {
             while (!salir) {
                 System.out.println("\n1. ¿Es multiplo? " + "\n2. Media de temperaturas " + "\n3. Espaciado "
                         + "\n4. Area y Perimetro de una circunferencia"
-                        + "\n5. Login " + "\n6. MCD de dós números " + "\n7. Salir" + "\n8. Salir");
+                        + "\n5. Login " + "\n6. MCD de dós números " + "\n7. Conversor de tiempo" + "\n8. Salir");
 
                 try {
                     System.out.print("Ingrese una opcion: \n");
@@ -185,7 +233,7 @@ public class App {
                             mcd();
                             break;
                         case 7:
-
+                        tiempo();
                             break;
                         default:
                             System.out.println("Opcion incorrecta, solo numeros entre 1 y 7");
