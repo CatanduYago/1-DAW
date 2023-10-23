@@ -4,5 +4,7 @@
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "python.formatting.provider": "none",
-    "livePreview.defaultPreviewPath": "/1º DAW CASTELAR/LMSGI (Pilo)/HTML/Practicas/ListadoPracticas1_13"
+    "livePreview.defaultPreviewPath": "/1º DAW CASTELAR/LMSGI (Pilo)/HTML/Practicas/ListadoPracticas1_13",
+    "synthwave84.brightness": 1,
+    "synthwave84.disableGlow": false
 }

@@ -89,9 +89,34 @@ public class Cuenta {
         double imc = calcularIMC();
         return imc > 20;
     }
-
-Cuenta mayordeedad = new Cuenta("Yago", "Catalano", "Andújar");
-mayordeedad.setedad(19);
-mayordeedad.setpeso(61.8);
-mayordeedad.setaltura(1.71);
+    public class Main {
+        public static void main(String[] args) {
+            Cuenta mayorDeEdad = new Cuenta("Yago", "Catalano", "Andújar");
+            mayorDeEdad.setEdad(19);
+            mayorDeEdad.setPeso(61.9);
+            mayorDeEdad.setAltura(1.71);
+    
+            Cuenta menorDeEdad = new Cuenta("María", "Gómez", "Martínez");
+            menorDeEdad.setEdad(15);
+            menorDeEdad.setPeso(55.0);
+            menorDeEdad.setAltura(1.60);
+    
+            Cuenta conSobrepeso = new Cuenta("Carlos", "Sánchez", "Rodríguez");
+            conSobrepeso.setEdad(30);
+            conSobrepeso.setPeso(85.0);
+            conSobrepeso.setAltura(1.70);
+    
+            Cuenta menosPeso = new Cuenta("Luis", "Fernández", "García");
+            menosPeso.setEdad(22);
+            menosPeso.setPeso(45.0);
+            menosPeso.setAltura(1.80);
+    
+            System.out.println(mayorDeEdad.getNombre() + " es mayor de edad: " + mayorDeEdad.isMayordeedad());
+            System.out.println(menorDeEdad.getNombre() + " es mayor de edad: " + menorDeEdad.isMayordeedad());
+    
+            System.out.println(conSobrepeso.getNombre() + " tiene sobrepeso: " + conSobrepeso.isSobrepeso());
+            System.out.println(menosPeso.getNombre() + " tiene sobrepeso: " + menosPeso.isSobrepeso());
+        }
+    }
 }
+
