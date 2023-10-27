@@ -48,12 +48,12 @@ public class App {
     }
 
     public static String espaciado(String texto) {
-        StringBuilder resultado = new StringBuilder();
+        String resultado="";
         for (int i = 0; i < texto.length(); i++) {
-            char caracter = texto.charAt(i);
-            resultado.append(caracter).append(' ');
+
+            resultado= texto.charAt(i) + "";
         }
-        return resultado.toString();
+        return resultado;
     }
 
     public static double calcularArea(double radio) {
@@ -79,9 +79,9 @@ public class App {
 
     static int intentos = 0;
 
-        public static boolean Login(String usuario, String contrasena) {
+        public static boolean Login(String usuario, String contraseña) {
         
-            if (usuario.equals("usuario1") && contrasena.equals("asdasd")) {
+            if (usuario.equals("usuario1") && contraseña.equals("asdasd")) {
                 return true;
             } else {
                 intentos++;
@@ -96,9 +96,9 @@ public class App {
                 System.out.print("Nombre de usuario: ");
                 String usuario = scanner.nextLine();
                 System.out.print("Contraseña: ");
-                String contrasena = scanner.nextLine();
+                String contraseña = scanner.nextLine();
 
-                if (Login(usuario, contrasena)) {
+                if (Login(usuario, contraseña)) {
                     System.out.println("Inicio de sesión correcto");
                     break;
                 } else {
