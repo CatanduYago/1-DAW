@@ -13,11 +13,11 @@ public class App {
     }
 
    
-    public DNI(int numero, String nombre, String apellidos, int añoNacimiento) {
+    public xDNI(int numero, String nombre, String apellidos, int añoNacimiento) {
         setNumero(numero);
         this.nombre = nombre;
         this.apellidos = apellidos;
-        setAñoNacimiento(añoNacimiento);
+        int AñoNacimiento=añoNacimiento;
     }
 
     
@@ -29,13 +29,14 @@ public class App {
         if (numero >= 0 && numero <= 99999999) {
             this.numero = numero;
             calcularLetra();
-        } else {
-            throw new IllegalArgumentException("Número de DNI inválido");
         }
     }
+    
+
 
     public int getAñoNacimiento() {
         return añoNacimiento;
     }
+}
 
    

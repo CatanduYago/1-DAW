@@ -50,33 +50,33 @@ public class App {
             } else if (comando.equals("crear")) {
                 int identificador = Integer.parseInt(scanner.nextLine());
                 cuenta = new Cuenta(identificador);
-                System.out.printf(">=%.2f\n", cuenta.getSaldo());
+                System.out.printf("\n", cuenta.getSaldo());
                 
-            } else if (comando.equals("crearSaldo")) {
+            } else if (comando.equals("crearsaldo")) {
                 int identificador = Integer.parseInt(scanner.nextLine());
                 double saldoInicial = Double.parseDouble(scanner.nextLine());
                 cuenta = new Cuenta(identificador, saldoInicial);
-                System.out.printf(">=%.2f\n", cuenta.getSaldo());
+                System.out.printf("\n", cuenta.getSaldo());
 
             } else if (comando.equals("ingresar")) {
                 double importe = Double.parseDouble(scanner.nextLine());
                 cuenta.ingresar(importe);
-                System.out.printf(">=%.2f\n", cuenta.getSaldo());
+                System.out.printf("\n", cuenta.getSaldo());
 
             } else if (comando.equals("retirar")) {
                 double importe = Double.parseDouble(scanner.nextLine());
                 cuenta.retirar(importe);
-                System.out.printf(">=%.2f\n", cuenta.getSaldo());
+                System.out.printf("\n", cuenta.getSaldo());
 
             } else if (comando.equals("morosa?")) {
                 if (cuenta.isMorosa()) {
-                    System.out.println(">SI");
+                    System.out.println("SÍ");
                 } else {
-                    System.out.println(">NO");
-                }
+                    System.out.println("NO");
+                
+                
+                }  
             }
         }
-
-        scanner.close();
     }
 }
