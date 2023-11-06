@@ -8,12 +8,12 @@ public class App {
     private int añoNacimiento;
     private int edad;
 
-    
+  
     public DNI() {
     }
 
    
-    public xDNI(int numero, String nombre, String apellidos, int añoNacimiento) {
+    public DNI(int numero, String nombre, String apellidos, int añoNacimiento) {
         setNumero(numero);
         this.nombre = nombre;
         this.apellidos = apellidos;
