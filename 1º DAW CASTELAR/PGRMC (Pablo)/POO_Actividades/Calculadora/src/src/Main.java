@@ -1,36 +1,33 @@
+package src;
 import java.util.Scanner;
 
-class Calculadora {
-    private static int resultado;
-    
-public Calculadora (int resultado) {
-        resultado = 0;
 
-        
-}
+public class Main {
 
-    
-public class App {
     public static void main(String[] args) {
-
+    int resultado = src.Calculadora.resultado;
     Scanner sc = new Scanner(System.in);
-   
     System.out.println(resultado);
+
     String operador = sc.nextLine();
-    System.out.println(operador);
     int num = sc.nextInt();
+    
     switch (operador) {
         case "+":
         resultado = (resultado+num);
+        System.out.println("="+resultado);
             break;
         case "-":
         resultado = (resultado-num);
+        System.out.println("="+resultado);
         break;
         case "*":
         resultado = (resultado*num);
+        System.out.println("="+resultado);
         break;
         case "/":
         resultado = (resultado/num);
+        System.out.println("="+resultado);
         break;
         case "factorial":
 
@@ -39,17 +36,13 @@ public class App {
 
         break;
         case "CE":
-        resultado = 0;
+        
         break;
         case "FIN":
         break;
         
     }
+    sc.close();
     
+    }
 }
-}
-}
-
-
-
-
