@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 class Cuenta {
@@ -6,7 +7,7 @@ class Cuenta {
 
     public Cuenta(int identificador) {
         this.identificador = identificador;
-        this.saldo = 0.0;
+        this.saldo = 0;
     }
 
     public Cuenta(int identificador, double saldoInicial) {

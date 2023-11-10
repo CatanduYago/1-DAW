@@ -11,7 +11,7 @@ public class Contador {
         if (valor < 100) {
             valor++;
         } else {
-            System.out.println("Error: El valor ya ha alcanzado el máximo (100).");
+            System.out.println("El maximo es 100");
         }
     }
 
@@ -19,7 +19,7 @@ public class Contador {
         if (valor > 0) {
             valor--;
         } else {
-            System.out.println("Error: El valor ya ha alcanzado el mínimo (0).");
+            System.out.println("El minimo debe ser 0");
         }
     }
 
@@ -36,7 +36,7 @@ public class Contador {
         contador1.incrementar();
 
         contador2.incrementar();
-        contador2.incrementar();
+        contador2.decrementar();
 
         contador1.mostrar();
         contador2.mostrar();
