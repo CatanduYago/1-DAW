@@ -7,7 +7,7 @@ public class Rectangulo {
             this.ancho = ancho;
             this.alto = alto;
         } else {
-            System.out.println("Ancho y alto deben estar en el rango de 5 a 10.");
+            System.out.println("el ancho y alto deben estar en el rango de 5 a 10.");
         }
     }
 
