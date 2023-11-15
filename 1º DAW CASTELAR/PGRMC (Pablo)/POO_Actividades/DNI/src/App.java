@@ -34,6 +34,10 @@ public class App {
     
 
 
+    private void calcularLetra() {
+    }
+
+
     public int getAñoNacimiento() {
         return añoNacimiento;
     }
