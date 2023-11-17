@@ -26,34 +26,30 @@ Mientras (continuar)
 	//se suman ambos dados.
     Dados <- Dado1 + Dado2
     Escribir "La suma es ", Dados
-    //Comprueba que la suma de los dados sea par O multiplo de tres
-    Si (sumaDados MOD 3 = 0 O sumaDados MOD 2 = 0) 
+    //Comprueba que la suma de los dados sea par O multiplo de tres y suma un punto.
+    Si (Dados MOD 3 = 0 O Dados MOD 2 = 0) 
 		Entonces
-		
         puntos <- puntos + 1
         Escribir "Has ganado un punto. Puntos actuales: ", puntos
-		//Comprueba si la suma es impar y no es multriplo de 3 y resta un punto
-    Sino Si (sumaDados MOD 2 <> 0 Y sumaDados MOD 3 <> 0) 
+		//Si e l numero de resultado de los dados es impar y no es multiplo de 3, resta un pnuto.
+    Sino Si (Dados MOD 2 <> 0 Y Dados MOD 3 <> 0) 
 			Entonces
-			
 			puntos <- puntos - 1
 			Escribir "Has perdidio un punto. Puntos restantes: ", puntos
 		FinSi
 	FinSi
-		//Si la suma es 5 acaba el juego
-	Si (sumaDados = 5) 
+		//Si la suma da 5 termina el juego
+	Si (Dados = 5) 
 		Entonces
-		
 			Escribir "Has sacado un 5, lo siento, fin del juego"
 			continuar <- Falso
-			//Si sacas un 7 o te quedas sin puntos se acaba el juego
-		Sino Si (sumaDados = 7 O puntos = 0) 
+			//Si sacas un 7 o terminas sin puntos termina el programa
+		Sino Si (Dados = 7 O puntos = 0) 
 				Entonces
-				
 				Escribir "Mala suerte, has sacado una suma que ha agotado tus puntos, fin del juego"
 				continuar <- Falso
 			FinSi
-			//Si agotas los puntos se acaba e juego
+			//Si te has qeudado sin puntos termina el jugeo
 			Si (puntos = 0) 
 				Entonces
 				
@@ -61,6 +57,7 @@ Mientras (continuar)
 				continuar <- Falso
 			FinSi
 		FinSi
+		//Si el booleano continuar se convierte en falso, es decir, has perdido, termina el mientras
 	FinMientras
-		Escribir "Has conseguido obtener", puntos, " puntos."
+		Escribir "Has terminado con ", puntos, " puntos."
 FinAlgoritmo
