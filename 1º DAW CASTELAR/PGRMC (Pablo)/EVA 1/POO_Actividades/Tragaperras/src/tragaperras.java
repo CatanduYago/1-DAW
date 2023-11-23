@@ -40,7 +40,7 @@ public int tirar() {
     }
 }
 
-private boolean tiradaLegal() {
+public boolean tiradaLegal() {
     int resultado1 = rodillo1.girarRodillo();
     int resultado2 = rodillo2.girarRodillo();
     int resultado3 = rodillo3.girarRodillo();
@@ -48,7 +48,7 @@ private boolean tiradaLegal() {
     return resultado1 == resultado2 || resultado2 == resultado3;
 }
 
-private boolean tiradaTrucada() {
+public boolean tiradaTrucada() {
     int resultado1 = rodillo1.girarRodilloTrucado();
     int resultado2 = rodillo2.girarRodilloTrucado();
     int resultado3 = rodillo3.girarRodilloTrucado();
@@ -56,12 +56,12 @@ private boolean tiradaTrucada() {
     return resultado1 == resultado2 || resultado2 == resultado3;
 }
 
-private void recibirPago() {
+public void recibirPago() {
     dineroDisponible += precio;
     bote += precio / 2;
 }
 
-private int otorgarPremio() {
+public int otorgarPremio() {
     if (tiradaTrucada()) {
         int premio = bote;
         bote = 0;
@@ -72,4 +72,4 @@ private int otorgarPremio() {
         return 0;
 }
 }
-    }
+ }

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="wnameth=device-wnameth, initial-scale=1.0">
+    <title>Ejemplo de formularios</title>
+    <style>
+        td {
+            color: brown;
+        }
+        
+        h3+h4 {
+            color: brown;
+        }
+        
+        fieldset {
+            width: 80%;
+        }
+        
+        body {
+            align-items: center;
+            padding: 1%;
+            display: block;
+            justify-content: center;
+            margin: 0.5%;
+            margin-right: 1%;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="procesa.php" method="post">
+        <fieldset>
+            <h3 style="color: brown;">Bienvenido al sitio de inscripcion "Formacion para todos"</h3>
+            <h4>Rellene todos los campos del formulario y <br> haga clic en el boton Enviar para validar la inscripcion.</h4>
+            <table>
+
+                <tr>
+                    <td>
+                        Nombre:
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Escriba un nombre" name="nom">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Apellidos:
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Escriba sus apellidos" name="ape">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Titulo de la formacion:
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Título" name="titulo" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Inicio de la formacion:
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Indique la fecha de inicio" name="inicio">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Fin de la formacion:
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Indique la fecha de fin" name="fin">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        Direccion emmail:
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Direccion de email válida" name="mail" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><br><input type="checkbox" required>Acepto las condiciones accesibles en <a href="#Condiciones">este enlace</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit">Enviar</button>
+                        <button type="reset">Cancelar</button> </td>
+                    <td></td>
+                </tr>
+            </table>
+    </form>
+</body>
+
+</html>
