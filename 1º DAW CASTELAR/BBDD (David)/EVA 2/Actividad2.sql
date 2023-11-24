@@ -1,7 +1,7 @@
 CREATE TABLE Libro (
     autor CHAR,
     titulo CHAR,
-    indice NUMBER (p),
+    indice NUMBER,
     editor CHAR, 
     clase  CONSTRAINT fk_clase REFERENCES Clase(clave),
     prestado BOOLEAN DEFAULT TRUE
@@ -21,6 +21,6 @@ CREATE TABLE Clase_nueva (
 CREATE TABLE Prestamo (
     codigo CONSTRAINT fk_codigo REFERENCES Libro (codigo),
     secuencia CONSTRAINT fk_secuencia REFERENCES Usuarios (secuencia),
-    cuantia CHAR(),
+    cuantia CHAR,
     fecha_inicio DATE
 );
