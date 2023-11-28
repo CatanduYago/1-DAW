@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="/1º DAW CASTELAR/LMSGI (Pilo)/EVA 1/Recuperación/f1.png" type="image/x-icon">
+        <link rel="icon" href="img/f1logo.png" type="image/x-icon">
         <title>Introdución a la F1</title>
         <style>
             body {
@@ -31,7 +31,8 @@
                 width: 85%;
             }
             
-            #footer {
+            footer {
+                border: 2px solid;
                 clear: both;
             }
             
@@ -45,14 +46,13 @@
                 display: inline-block;
                 position: relative;
                 padding: 10px;
-                background-color: #333;
-                color: white;
                 cursor: pointer;
             }
             
             .dropdown {
                 position: relative;
                 display: inline-block;
+
             }
             
             .dropdown-content {
@@ -60,13 +60,43 @@
                 display: none;
                 position: absolute;
                 background-color: #cc0000;
-                min-width: 160px;
-                box-shadow: 0 8px 16px #cc0000;
+                min-width: 90px;
+                box-shadow: 0 8px 16px #fd7c7c;
                 z-index: 1;
+
             }
             
             .dropdown:hover .dropdown-content {
                 display: block;
+            }
+
+            #f1{
+                background-color: #cc0000;
+            }
+            #f2{
+                background-color: lightskyblue ;
+                box-shadow: 0 8px 16px lightblue ;
+            }
+            #f1 a {
+                color: white;
+            }
+            #f2 a {
+                color: black;
+            }
+            #li{
+                color: grey;
+            }
+            #li:hover{
+                color: black; 
+            }
+            #equipo:hover{
+                font-size: 17px;
+            }
+            #piloto:hover{
+                font-size: 17px;
+            }
+            #calendario:hover{
+                font-size: 17px; 
             }
         </style>
     </head>
@@ -74,24 +104,24 @@
     <body>
         <div class="menu">
             <ul>
-                <li>Inicio</li>
-                <li class="dropdown">
+                <li id="li">Inicio</li>
+                <li class="dropdown" id="li">
                     Formula 1
-                    <div class="dropdown-content">
-                        <a href="#">Equipos</a><br>
-                        <a href="#">Pilotos</a><br>
-                        <a href="#">Calendario</a>
+                    <div class="dropdown-content" id="f1">
+                        <a href="#" id="equipo">Equipos</a><br>
+                        <a href="#" id="piloto">Pilotos</a><br>
+                        <a href="#" id="calendario">Calendario</a>
                     </div>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown" id="li">
                     Formula 2
-                    <div class="dropdown-content">
-                        <a href="#">Equipos</a> <br>
-                        <a href="#">Pilotos</a> <br>
-                        <a href="#">Calendario</a> <br>
+                    <div class="dropdown-content" id ="f2">
+                        <a href="#"id="equipo">Equipos</a> <br>
+                        <a href="#"id="piloto">Pilotos</a> <br>
+                        <a href="#"id="calendario">Calendario</a> <br>
                     </div>
                 </li>
-                <li>Contacto</li>
+                <li id="li">Contacto</li>
             </ul>
         </div>
     </body>
