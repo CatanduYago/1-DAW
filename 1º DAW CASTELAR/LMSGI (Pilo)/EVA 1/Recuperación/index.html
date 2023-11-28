@@ -36,7 +36,7 @@
                 clear: both;
             }
             
-            ul {
+            nav {
                 list-style: none;
                 margin: 0;
                 padding: 0;
@@ -47,12 +47,12 @@
                 position: relative;
                 padding: 10px;
                 cursor: pointer;
+                list-style: none;
             }
             
             .dropdown {
                 position: relative;
                 display: inline-block;
-
             }
             
             .dropdown-content {
@@ -63,47 +63,69 @@
                 min-width: 90px;
                 box-shadow: 0 8px 16px #fd7c7c;
                 z-index: 1;
-
             }
             
             .dropdown:hover .dropdown-content {
                 display: block;
             }
-
-            #f1{
+            
+            #f1 {
                 background-color: #cc0000;
             }
-            #f2{
-                background-color: lightskyblue ;
-                box-shadow: 0 8px 16px lightblue ;
+            
+            #f2 {
+                background-color: lightskyblue;
+                box-shadow: 0 8px 16px lightblue;
             }
+            
             #f1 a {
                 color: white;
             }
+            
             #f2 a {
                 color: black;
             }
-            #li{
+            
+            #li {
                 color: grey;
             }
-            #li:hover{
-                color: black; 
+            
+            #li:hover {
+                color: black;
             }
-            #equipo:hover{
+            
+            #equipo:hover {
                 font-size: 17px;
             }
-            #piloto:hover{
+            
+            #piloto:hover {
                 font-size: 17px;
             }
-            #calendario:hover{
-                font-size: 17px; 
+            
+            #calendario:hover {
+                font-size: 17px;
+            }
+            
+            .margendere {
+                float: right;
+            }
+            
+            .margendere p {
+                text-align: left;
+            }
+            
+            .centro {
+                width: 300px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                text-align: center;
             }
         </style>
     </head>
 
     <body>
         <div class="menu">
-            <ul>
+            <nav>
                 <li id="li">Inicio</li>
                 <li class="dropdown" id="li">
                     Formula 1
@@ -115,16 +137,24 @@
                 </li>
                 <li class="dropdown" id="li">
                     Formula 2
-                    <div class="dropdown-content" id ="f2">
-                        <a href="#"id="equipo">Equipos</a> <br>
-                        <a href="#"id="piloto">Pilotos</a> <br>
-                        <a href="#"id="calendario">Calendario</a> <br>
+                    <div class="dropdown-content" id="f2">
+                        <a href="#" id="equipo">Equipos</a> <br>
+                        <a href="#" id="piloto">Pilotos</a> <br>
+                        <a href="#" id="calendario">Calendario</a> <br>
                     </div>
                 </li>
                 <li id="li">Contacto</li>
-            </ul>
+            </nav>
         </div>
+        <div class="margendere">
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque quasi quas, totam architecto quam, minus inventore quibusdam eaque mollitia vero et eum consequatur quos excepturi perferendis velit voluptatem esse dicta.
+            </p>
+        </div>
+        <div class="centro">asd</div>
+
     </body>
+
     <footer>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat tenetur minima excepturi esse eum, minus nam sed consectetur explicabo velit in repudiandae ad suscipit nesciunt ab modi doloribus earum aliquid. aaas
     </footer>
