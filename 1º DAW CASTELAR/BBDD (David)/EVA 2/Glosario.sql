@@ -17,3 +17,13 @@ SELECT TO_DATE ('29/11/23','DD MM YY') FROM dual;
 
 CREATE USER prueba_eliminacion IDENTIFIED BY 1234;
 SHOW USER;
+
+CREATE TABLE usuarios (
+    nombre      CHAR (30),
+    clave       VARCHAR2(10),
+    telefono    NUMBER (10),
+    saldo       NUMBER (6,2),
+    cumpleaños  DATE,
+    fecha       TIMESTAMP,
+    bool     NUMBER(1,0)
+    )
