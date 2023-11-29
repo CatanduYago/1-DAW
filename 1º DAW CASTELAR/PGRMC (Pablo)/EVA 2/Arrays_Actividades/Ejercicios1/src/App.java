@@ -50,17 +50,43 @@ public class App {
         }
     }
 
-    public static void media(){
+    public static void media() {
         Scanner sc = new Scanner(System.in);
-      String[] notas = new String[5];
+        String[] notas = new String[5];
 
         for (int i = 0; i > 0; i++) {
-            System.out.print("Nota " +(i + 1) + ": ");
-            notas[i] = sc.nextLine(); 
-        
+            System.out.println("Nota " + (i + 1) + ": ");
+            notas[i] = sc.nextLine();
+
         }
         System.out.println(notas);
 
+    }
+
+    public static void vector() {
+
+        Scanner sc = new Scanner(System.in);
+        int[] vector = new int[10];
+        int numero;
+        int contador = 0;
+        int l = 0;
+        while (contador < 10) {
+            l++;
+            System.out.print( (l) + ". ");
+            numero = sc.nextInt();
+
+            if (numero < 0) {
+                break;
+            }
+
+            vector[contador] = numero;
+            contador++;
+        }
+
+        System.out.print("Vector: ");
+        for (int i = 0; i < contador; i++) {
+            System.out.print(vector[i] + " ");
+        }
     }
 
     public static void main(String[] args) {
@@ -68,8 +94,9 @@ public class App {
         int opcion;
         Scanner sc = new Scanner(System.in);
         System.out.println(
-                "\nIngrese una opcion: \n 1. Calcular el cuadrado y el cubo de un número. \n 2. Inversion de cadena de caracteres \n 3. Muestra la nota mas alta, la mas baja y la media \n 6. Salir\n"+" " );
-        opcion = sc.nextInt( );
+                "\nIngrese una opcion: \n 1. Calcular el cuadrado y el cubo de un número. \n 2. Inversion de cadena de caracteres \n 3. Muestra la nota mas alta, la mas baja y la media \n 4. Introduce 10 elementos \n 6. Salir\n"
+                        + " ");
+        opcion = sc.nextInt();
 
         switch (opcion) {
             case 1: // Calcula cuadrado y cubo de un numero introducido por teclado
@@ -80,15 +107,15 @@ public class App {
                 System.out.println("Ejercicio 2\n Ingrese una cadena de caracteres: ");
                 invertir();
                 break;
-            case 3: //Muestra la nota mas alta, la mas baja y la media
+            case 3: // Muestra la nota mas alta, la mas baja y la media
                 System.out.println("Ejercicio 3\n Ingrese tres numeros: ");
                 media();
                 break;
             case 4: //
                 System.out.println("Ejercicio 4\n  ");
-
+                vector();
                 break;
-            case 5:// 
+            case 5://
                 System.out.println("Ejercicio 5\n ");
 
                 break;
