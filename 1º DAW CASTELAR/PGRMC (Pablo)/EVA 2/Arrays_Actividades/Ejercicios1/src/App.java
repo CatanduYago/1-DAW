@@ -75,7 +75,7 @@ public class App {
         for (double nota : notas) {
             suma += nota;
         }
-        double media = suma / notas.length;
+        double media = suma/notas.length;
         System.out.println("\nNota media: " + media);
 
         double maxNota = notas[0];
@@ -166,7 +166,7 @@ public class App {
         int opcion;
         Scanner sc = new Scanner(System.in);
         System.out.println(
-                "\nIngrese una opcion: \n 1. Calcular el cuadrado y el cubo de un número. \n 2. Inversion de cadena de caracteres \n 3. Muestra la nota mas alta, la mas baja y la media \n 4. Introduce 10 elementos \n 6. Salir\n"
+                "\nIngrese una opcion: \n 1. Calcular el cuadrado y el cubo de un número. \n 2. Inversion de cadena de caracteres \n 3. Muestra la nota mas alta, la mas baja y la media \n 4. Introduce 10 elementos \n 5. Suma de vectores \n 6. Salir\n"
                         + " ");
         opcion = sc.nextInt();
 
@@ -187,7 +187,7 @@ public class App {
                 System.out.println("Ejercicio 4\n Ingresa 10 numeros o un numero negativo para terminar: ");
                 vector();
                 break;
-            case 5://Recibe 2 vec tores y los suma
+            case 5:// Recibe 2 vec tores y los suma
                 System.out.println("Ejercicio 5\n ");
                 sumavectores();
                 break;
