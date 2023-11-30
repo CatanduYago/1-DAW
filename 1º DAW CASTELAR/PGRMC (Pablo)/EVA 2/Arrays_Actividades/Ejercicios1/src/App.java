@@ -52,14 +52,47 @@ public class App {
 
     public static void media() {
         Scanner sc = new Scanner(System.in);
-        String[] notas = new String[5];
 
-        for (int i = 0; i > 0; i++) {
-            System.out.println("Nota " + (i + 1) + ": ");
-            notas[i] = sc.nextLine();
+        double[] notas = new double[5];
 
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Introduce la nota " + (i + 1) + ": ");
+            notas[i] = sc.nextDouble();
+
+            while (notas[i] < 0 || notas[i] > 10) {
+                System.out.println("La nota debe estar entre 0 y 10");
+                System.out.print("Introduce la nota " + (i + 1) + ": ");
+                notas[i] = sc.nextDouble();
+            }
         }
-        System.out.println(notas);
+
+        System.out.println("\nNotas:");
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Nota " + (i + 1) + ": " + notas[i]);
+        }
+
+        double suma = 0;
+        for (double nota : notas) {
+            suma += nota;
+        }
+        double media = suma / notas.length;
+        System.out.println("\nNota media: " + media);
+
+        double maxNota = notas[0];
+        for (double nota : notas) {
+            if (nota > maxNota) {
+                maxNota = nota;
+            }
+        }
+        System.out.println("Nota mas alta: " + maxNota);
+
+        double minNota = notas[0];
+        for (double nota : notas) {
+            if (nota < minNota) {
+                minNota = nota;
+            }
+        }
+        System.out.println("Nota mas baja: " + minNota);
 
     }
 
@@ -72,7 +105,7 @@ public class App {
         int l = 0;
         while (contador < 10) {
             l++;
-            System.out.print( (l) + ". ");
+            System.out.print((l) + ". ");
             numero = sc.nextInt();
 
             if (numero < 0) {
@@ -87,6 +120,45 @@ public class App {
         for (int i = 0; i < contador; i++) {
             System.out.print(vector[i] + " ");
         }
+    }
+
+    public static void sumavectores() {
+        Scanner sc = new Scanner(System.in);
+
+        int[] vector1 = new int[5];
+        int[] vector2 = new int[5];
+        int[] vector3 = new int[5];
+
+        System.out.println("Primer vector:");
+        for (int i = 0; i < 5; i++) {
+            vector1[i] = sc.nextInt();
+        }
+
+        System.out.println("Segundo vector:");
+        for (int i = 0; i < 5; i++) {
+            vector2[i] = sc.nextInt();
+        }
+
+        for (int i = 0; i < 5; i++) {
+            vector3[i] = vector1[i] + vector2[i];
+        }
+
+        System.out.print("Vector1: ");
+        mostrarVector(vector1);
+
+        System.out.print("Vector2: ");
+        mostrarVector(vector2);
+
+        System.out.print("Vector3 (suma de los dos primeros vecotres): ");
+        mostrarVector(vector3);
+
+    }
+
+    public static void mostrarVector(int[] vector) {
+        for (int valor : vector) {
+            System.out.print(valor + " ");
+        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -111,13 +183,13 @@ public class App {
                 System.out.println("Ejercicio 3\n Ingrese tres numeros: ");
                 media();
                 break;
-            case 4: //
-                System.out.println("Ejercicio 4\n  ");
+            case 4: // Escribe una cadena de 10 vectores introducidos por teclado
+                System.out.println("Ejercicio 4\n Ingresa 10 numeros o un numero negativo para terminar: ");
                 vector();
                 break;
-            case 5://
+            case 5://Recibe 2 vec tores y los suma
                 System.out.println("Ejercicio 5\n ");
-
+                sumavectores();
                 break;
             case 6:
                 break;
