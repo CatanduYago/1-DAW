@@ -4,30 +4,38 @@ public class App {
 
     public static void alumnos() {
         Scanner sc = new Scanner(System.in);
-        String[][] matriz = {
-            {"Yago", "Manu", "Oscar"},
-            {String.valueOf(19),String.valueOf(22) , String.valueOf(19)}};
+        String[][] matriz = new String[100][2];
+        boolean fin = false;
+        int numAlumnos = 0;
 
-        String elemento = matriz[1][0];
-        String nombre = matriz [0][0];
-        System.out.println("Alumno: "+ nombre+". Tiene: " +elemento+ " años");
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
-                if (i < matriz.length || j < matriz[i].length) {
-                    System.out.print(matriz[i][j] + " ");
-                }
+            for (int i = 0; i < matriz.length && !fin; i++) {
+                System.out.println("Introduce el nombre del alumno: ");
+                matriz[i][0] = sc.nextLine();
+
+                if (matriz[i][0].equals("*")) {
+                    fin = true;
+                    break;
+                  }
+                    System.out.println("Introduce la edad del alumno: ");
+                    matriz[i][1] = sc.nextLine();
+                    numAlumnos++;
+                if (fin==true){
+                break;
             }
-            System.out.println();
+            pasarlo a int
+            if (matriz[i][1]>=18)
+            System.out.println(System.out.println(matriz[i][1]18););
+                }
+            
         }
-        sc.close();
-    }
+    
 
     public static void main(String[] args) throws Exception {
 
         int opcion;
         Scanner sc = new Scanner(System.in);
         System.out.println(
-                "\nIngrese una opcion: \n 1.  \n 2.  \n 3.  \n 4.  \n 5.  \n 6. Salir\n");
+                "\nIngrese una opcion: \n 1.Edad de los alumnos  \n 2.  \n 3.  \n 4.  \n 5.  \n 6. Salir\n");
         opcion = sc.nextInt();
 
         switch (opcion) {
