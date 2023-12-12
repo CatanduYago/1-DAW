@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <body>
+        <h1><img class="icono" src="images/icono.png"> ¿Cuál es el tipo principal de este Pokémon?</h1>
+        <div>Solo los expertos en Pokémon podrán superar este reto. Responde 100 veces seguidas para recuperar la contraseña.</div>
+        <div id="timerSeconds" style="color:red; font-size: 70px">4</div>
+
+        <p>golem</p><br>
+        <form method="post">
+            Tipo: <input id="answer" type="text" name="answer">
+            <input type="submit" value="Enviar">
+        </form>
+        <font color="red">
+            <h3>Incorrecto</h3>
+        </font>
+        <div><strong>Pista:</strong> la contraseña se revelará como:</div><br>
+        <img width="200" src="images/pista.jpg">
+
+        <h2>Acceso al panel de control</h2>
+        <h2>
+            <form method="post" action="admin.php">
+                <input id="pass" type="text" name="pass" placeholder="Contraseña">
+                <input type="submit" value="Login">
+            </form>
+
+            <script type="text/javascript">
+                var maxtime = 1 * 80; //10s
+                function CountDown() {
+                    if (maxtime >= 0) {
+                        secondsMsg = Math.floor(maxtime % 60);
+                        document.all["timerSeconds"].innerHTML = secondsMsg;
+                        --maxtime;
+                    } else {
+                        clearInterval(timer);
+                        document.all["timerSeconds"].innerHTML = "Death";
+                    }
+                }
+                timer = setInterval("CountDown()", 1000);
+            </script>
+
+        </h2>
+    </body>
+</body>
+
+</html>
