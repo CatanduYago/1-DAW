@@ -116,14 +116,55 @@ CREATE TABLE restricciones4(
 nombre CHAR (5) CONSTRAINT clavprim1 PRIMARY KEY,
 CONSTRAINT clavfor FOREIGN KEY (nombre) REFERENCES restricciones2(nombre));
 
-INSERT ALL INTO restricciones(nombre) VALUES('Yago')
-            INTO restricciones(nombre) VALUES('Yago')
-            INTO restricciones(nombre) VALUES('Yago')
-            INTO restricciones(nombre) VALUES('Yago')
+INSERT ALL INTO restricciones(nombre) VALUES('ASd')
+            INTO restricciones(nombre) VALUES('Msdau')
+            INTO restricciones(nombre) VALUES('asdoa')
+            INTO restricciones(nombre) VALUES('Ndsae')  
+            SELECT * FROM restricciones;
             
-
-;
-            
+SELECT * FROM restricciones;
 
 SELECT * FROM USER_TABLES;
+
+CREATE TABLE primarytable (
+        id1 NUMBER,
+        id2 NUMBER, 
+        CONSTRAINT ct_pk_id1id2_pitab PRIMARY KEY (id1, id2)
+        );
+        
+CREATE TABLE tabla1(
+    id1 NUMBER PRIMARY KEY
+    );
+    
+CREATE TABLE tabla2 ( 
+    id1 NUMBER PRIMARY KEY,
+    FOREIGN KEY (id1) REFERENCES tabla1(id1)
+    );
+    
+DROP TABLE tabla1 CASCADE CONSTRAINT;
+
+SELECT * FROM all_constraints WHERE TABLE_NAME ='TABLA2';
+
+ALTER TABLE tabla2 DROP CONSTRAINT SYS_C007013;
+
+RENAME tabla2 TO tabla1;
+DESCRIBE tabla1;
+
+TRUNCATE TABLE usuarios;
+SELECT * FROM usuarios;
+
+ALTER TABLE tabla1 ADD CONSTRAINT ct_pk_id1_tab1 PRIMARY KEY(id1);
+
+SELECT * FROM all_constraints WHERE TABLE_NAME ='TABLA1';
+
+ALTER TABLE tabla1 ADD id2 NUMBER;
+ALTER TABLE tabla1 DROP (id2);
+ALTER TABLE tabla1 MODIFY id1 CHAR;
+
+DESCRIBE tabla1;
+
+SELECT * FROM all_constraints WHERE TABLE_NAME ='TABLA1';
+
+
+
 

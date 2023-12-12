@@ -17,3 +17,4 @@
        horas CHAR(9) CHECK (horas>0.5),
        fecha_rep DATE
     );
+    
