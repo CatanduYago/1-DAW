@@ -9,7 +9,6 @@ public class App {
     public static void acarreo(){
         Scanner sc = new Scanner(System.in);
         int numeros=sc.nextInt();
-        String cifras = numeros.length();
         for (int i=0; i<numeros.length; i++){
 
         }
